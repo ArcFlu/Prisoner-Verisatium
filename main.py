@@ -56,8 +56,9 @@ sumLoops = []
 loopFlag = True
 failures = 0
 successes = 0
-numCases = 1000
+numCases = 10_000
 for i in range(0, numCases):
+    print('Simulation ' + str(i + 1))
     if simulation():
         successes += 1
     else:
@@ -66,7 +67,8 @@ for i in range(0, numCases):
 successRate = float(successes/numCases)
 
 print()
-print('Success Rate: ' + f'{successRate:.3f}')
+print('Success Rate: ' + str(successRate))
+
 if loopFlag:
     print('Average size of successful loops: ' + str(sum(sumLoops)/successes))
 else:
