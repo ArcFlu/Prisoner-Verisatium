@@ -7,8 +7,12 @@ def initBoxes() -> list[int]:
     boxes = [0] * numPrisoners
     chosenDict = {}
     currIndex = 0
+    listPrisonerNums = []
+    for n in range(0, numPrisoners):
+        listPrisonerNums.append(n)
+
     while len(chosenDict) < numPrisoners:
-        number = random.choice(range(0, numPrisoners))
+        number = random.choice(listPrisonerNums)
         if number not in chosenDict:
             chosenDict[number] = currIndex
             boxes[currIndex] = number
