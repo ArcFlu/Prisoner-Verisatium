@@ -5,18 +5,17 @@ from re import search
 
 def initBoxes() -> list[int]:
     boxes = [0] * numPrisoners
-    chosenDict = {}
     currIndex = 0
+
     listPrisonerNums = []
     for n in range(0, numPrisoners):
         listPrisonerNums.append(n)
 
-    while len(chosenDict) < numPrisoners:
+    while len(listPrisonerNums) > 0:
         number = random.choice(listPrisonerNums)
-        if number not in chosenDict:
-            chosenDict[number] = currIndex
-            boxes[currIndex] = number
-            currIndex += 1
+        listPrisonerNums.remove(number)
+        boxes[currIndex] = number
+        currIndex += 1
 
     # for b in range(0, len(boxes), 10):
     #     print(boxes[b:b+10])
