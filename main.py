@@ -56,7 +56,7 @@ sumLoops = []
 loopFlag = True
 failures = 0
 successes = 0
-numCases = 10_000
+numCases = 1_000_000
 for i in range(0, numCases):
     print('Simulation ' + str(i + 1))
     if simulation():
